@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-import vilaocontroller from './controller/vilaocontroller.js';
+import vilaocontroller from './src/controller/vilaocontroller.js';
 import express from 'express';
 import cors from 'cors';
 
