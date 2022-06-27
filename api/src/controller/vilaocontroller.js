@@ -1,4 +1,4 @@
-import { inserirvilao } from '../repository/vilaorepository.js'
+import { inserirvilao, listadeviloes } from '../repository/vilaorepository.js'
 
 import { Router } from 'express'
 
@@ -15,6 +15,19 @@ server.post('/vilao', async (req, resp) =>{
     catch (err) {
         resp.status(400).send({
             erro:err.message
+        })
+    }
+})
+
+
+server.get('/viloes', async (req, resp) => {
+    try {
+        const resposta = await listadeviloes();
+        resp.send(resposta);
+    } 
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
         })
     }
 })
